@@ -62,6 +62,8 @@ function toggleCart() {
 </script>
 <template>
   <header class="bg-white py-4 sticky top-0 shadow-sm-z-50">
+
+
     <div class="container mx-auto px-4 lg:px-10">
       <nav
         class="relative flex flex-col md:flex-row items-center justify-between"
@@ -130,8 +132,9 @@ function toggleCart() {
                 />
 
                 <div  class="absolute text-sm -top-2 -right-3 p-1 flex justify-center items-center h-5 w-5 rounded-full text-white bg-gray-700">
-
+                  {{cartItemsCount}}
                 </div>
+
               </div>
 
               <ShoppingCart :isVisible="showCart" @toggle-cart="toggleCart" />

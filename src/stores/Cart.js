@@ -74,9 +74,6 @@ export const useCart = defineStore('cart', {
 
         async decrement(product){
             if (this.cartItems.length>0){
-
-                // index ta k dore nilam
-
                 let index=this.cartItems.findIndex((i)=>i.id===product.id);
 
                 if ( this.cartItems[index]["quantity"] !== 1){
@@ -95,9 +92,6 @@ export const useCart = defineStore('cart', {
         // cart increment
         async increment(product){
             if (this.cartItems.length>0){
-
-                // index ta k dore nilam
-
                 let index=this.cartItems.findIndex((i)=>i.id===product.id);
 
                 if ( this.cartItems[index]["quantity"] !== 0){
@@ -112,12 +106,5 @@ export const useCart = defineStore('cart', {
                 }
             }
         },
-
-
-
-        // async deleteLogout(){
-        //     this.cartItems.push('');
-        // },
-
     }
 })

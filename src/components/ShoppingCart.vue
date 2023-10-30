@@ -92,13 +92,15 @@ const open = ref(true)
                                     >
                                       <button
                                           class="flex items-center justify-center rounded-l-md bg-gray-200 px-4 transition hover:bg-black hover:text-white"
+                                          :disabled="cart.quantity===1?true:false"
+                                          @click.prevent="cartDecrement(cart)"
+
+
                                       >
                                         -
                                       </button>
                                       <div
                                           class="flex w-full items-center justify-center bg-gray-100 px-4 text-xs uppercase transition"
-                                          :disabled="cart.quantity===1?true:false"
-                                          @click.prevent="cartDecrement(cart)"
                                       >
                                        {{cart.quantity}}
                                       </div>
