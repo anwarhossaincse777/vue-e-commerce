@@ -1,13 +1,5 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
-
-import Hero from "./Hero.vue";
-import WhyShopWithUs from "./WhyShopWithUs.vue";
-import NewArrivals from "./NewArrivals.vue";
-import AddToCart from "@/components/AddToCart.vue";
-
-
-import axios from "axios";
 import { ref} from "vue";
 import {useCart} from "@/stores/Cart";
 import {useNotification} from "@/stores/notification";

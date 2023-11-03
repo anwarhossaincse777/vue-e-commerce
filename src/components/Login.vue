@@ -4,48 +4,46 @@ import {useAuth} from "@/stores/auth";
 import router from "@/router";
 import {ElMessage, ElNotification} from "element-plus";
 
-const loginForm=reactive({
-  userEmail:'' ,
-  password :'',
+const loginForm = reactive({
+  userEmail: '',
+  password: '',
 })
 
-let msg=ref('');
+let msg = ref('');
 
 
-const auth=useAuth();
+const auth = useAuth();
 
 function submitFrom() {
-  const success= auth.login(loginForm);
-  if (success){
-    if (success.newUserEmail===loginForm.userEmail && success.newPassword===loginForm.password){
+  const success = auth.login(loginForm);
+  if (success) {
+    if (success.newUserEmail === loginForm.userEmail && success.newPassword === loginForm.password) {
 
-      router.push({ name: 'home'});
-      auth.isLoggedIn=true;
+      router.push({name: 'home'});
+      auth.isLoggedIn = true;
 
       ElNotification({
         title: 'Success',
         message: 'You have Successfully Logged In',
         type: 'success',
         position: 'top-right',
-        duration:2000,
+        duration: 2000,
       })
-    }else {
+    } else {
       ElMessage({
         type: 'error',
-        message: `No record Match with this ${loginForm.userEmail} & Password ` ,
+        message: `No record Match with this ${loginForm.userEmail} & Password `,
       })
     }
-  }else {
+  } else {
     ElMessage({
       type: 'error',
-      message: "Something went wrong" ,
+      message: "Something went wrong",
     })
   }
 
 
 }
-
-
 
 
 function validateEmail(email) {

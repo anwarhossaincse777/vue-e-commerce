@@ -5,43 +5,42 @@ import {useCart} from "@/stores/Cart";
 import {useNotification} from "@/stores/notification";
 import {ref} from "vue";
 
-const props=defineProps({
-  product:{
+const props = defineProps({
+  product: {
     type: Object,
     required: true
   }
 })
 
 
+const cart = useCart();
 
-const cart=useCart();
-
-const notify=useNotification();
+const notify = useNotification();
 
 
-const price=ref();
+const price = ref();
 
-function addToCart(product){
-  if (product.discount){
-    let originalPrice=product.price;
-    let discount=product.discount;
-    let totalPrice=originalPrice-(originalPrice*discount)/100;
-    price.value=totalPrice.toFixed();
+function addToCart(product) {
+  if (product.discount) {
+    let originalPrice = product.price;
+    let discount = product.discount;
+    let totalPrice = originalPrice - (originalPrice * discount) / 100;
+    price.value = totalPrice.toFixed();
 
-  }else {
-    price.value=product.price;
+  } else {
+    price.value = product.price;
 
   }
 
 
   cart.addToCart({
-    id:product.id,
-    name:product.title,
-    price:price.value,
-    thumbnail:product.thumbnail,
+    id: product.id,
+    name: product.title,
+    price: price.value,
+    thumbnail: product.thumbnail,
   })
 
-  notify.Success(`${product.title}` +  " Added Your Cart Successfully");
+  notify.Success(`${product.title}` + " Added Your Cart Successfully");
 
 }
 </script>

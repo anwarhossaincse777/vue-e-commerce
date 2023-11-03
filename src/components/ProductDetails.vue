@@ -1,6 +1,6 @@
 <script setup>
-import { ref, onMounted, reactive } from "vue";
-import { useRoute } from "vue-router";
+import {ref, onMounted, reactive} from "vue";
+import {useRoute} from "vue-router";
 import axios from "axios";
 import AddToCart from "@/components/AddToCart.vue";
 
@@ -24,7 +24,7 @@ onMounted(() => {
   <div class="container mx-auto md:p-10 p-5">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
       <div>
-        <img :src="product.thumbnail" class="w-full" alt="" />
+        <img :src="product.thumbnail" class="w-full" alt=""/>
 
         <div class="grid grid-cols-4 items-center gap-3 mt-4">
           <div
@@ -32,7 +32,7 @@ onMounted(() => {
               v-for="(image, index) in product.images"
               :key="index"
           >
-            <img :src="image" class="h-32 w-32" alt="" />
+            <img :src="image" class="h-32 w-32" alt=""/>
           </div>
         </div>
       </div>
@@ -71,7 +71,7 @@ onMounted(() => {
         </p>
 
         <div class="flex py-4 space-x-4">
-          <AddToCart :product="product" />
+          <AddToCart :product="product"/>
         </div>
       </div>
     </div>
