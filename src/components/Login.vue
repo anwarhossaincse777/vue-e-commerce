@@ -61,13 +61,13 @@ function validateEmail(email) {
 </script>
 
 <template>
-  <section class="bg-[#00DCBD]" id="app">
+  <section class="bg-gray-200" id="app">
     <!-- Show login and registration forms if the user is not logged in -->
-    <div  class="container h-screen flex justify-center items-center">
+    <div class="container h-screen flex justify-center items-center">
       <div class="flex flex-col justify-center items-center">
         <!-- Login form -->
         <form
-            class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+            class="bg-gray-100 shadow-xl rounded px-8 pt-6 pb-8 mb-4"
             @submit.prevent="submitFrom"
         >
           <div class="mb-4 w-80">
@@ -87,8 +87,7 @@ function validateEmail(email) {
                 placeholder="Email"
                 @blur="validateEmail(loginForm.userEmail)"
             />
-            <span class="text-red-600" >{{msg}}</span>
-
+            <span class="text-red-600">{{ msg }}</span>
           </div>
           <div class="mb-6 w-80">
             <label
@@ -108,15 +107,16 @@ function validateEmail(email) {
             />
           </div>
           <div class="flex items-center justify-between">
-            <button v-if="msg?'':'disabled'"
-                    class="bg-[#00DCBD] hover:bg-[#20665d] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                    type="submit"
+            <button
+                v-if="msg ? '' : 'disabled'"
+                class="bg-gray-600 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                type="submit"
             >
               Sign In
             </button>
-            <RouterLink :to="{name:'register'}"
-                        class="inline-block align-baseline font-bold text-sm text-[#00DCBD] hover:text-[#20665d]"
-
+            <RouterLink
+                :to="{ name: 'register' }"
+                class="inline-block align-baseline font-bold text-sm text-gray-900 hover:text-gray-700"
             >
               Or Register
             </RouterLink>

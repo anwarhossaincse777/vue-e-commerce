@@ -28,9 +28,9 @@ onMounted(() => {
 
         <div class="grid grid-cols-4 items-center gap-3 mt-4">
           <div
-            class="border rounded bg-gray-100 cursor-pointer p-3"
-            v-for="(image, index) in product.images"
-            :key="index"
+              class="border rounded bg-gray-100 cursor-pointer p-3"
+              v-for="(image, index) in product.images"
+              :key="index"
           >
             <img :src="image" class="h-32 w-32" alt="" />
           </div>
@@ -38,15 +38,15 @@ onMounted(() => {
       </div>
       <div class="md:flex-1 px-4">
         <h2
-          class="mb-2 leading-tight tracking-tight font-bold text-gray-800 text-2xl md:text-3xl"
+            class="mb-2 leading-tight tracking-tight font-bold text-gray-800 text-2xl md:text-3xl"
         >
           {{ product.description }}
         </h2>
         <p class="text-gray-500 text-sm">
           By
           <a href="#" class="text-gray-600 hover:underline">{{
-            product.title
-          }}</a>
+              product.title
+            }}</a>
         </p>
 
         <div class="flex items-center space-x-4 my-4">
@@ -54,8 +54,8 @@ onMounted(() => {
             <div class="rounded-lg bg-gray-100 flex py-2 px-3">
               <span class="text-gray-400 mr-1 mt-1">$</span>
               <span class="font-bold text-gray-600 text-3xl">{{
-                product.price
-              }}</span>
+                  product.price
+                }}</span>
             </div>
           </div>
           <div class="flex-1">
@@ -71,7 +71,7 @@ onMounted(() => {
         </p>
 
         <div class="flex py-4 space-x-4">
-       <AddToCart :product="product"/>
+          <AddToCart :product="product" />
         </div>
       </div>
     </div>
